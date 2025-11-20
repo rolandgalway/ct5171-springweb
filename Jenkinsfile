@@ -1,22 +1,26 @@
 pipeline {
     agent any
+
     stages {
-        stage ('GetProject') {
+
+        stage('Get Project') {
             steps {
-                git 'https://github.com/rolandgalway/ct5171-springweb.git'
+                git url: 'https://github.com/rolandgalway/ct5171-springweb.git', branch: 'main'
             }
         }
-        stage ('build') {
+
+        stage('Build') {
             steps {
-                sh 'mvn clean:clean'
-                sh 'mvn dependency:copy-dependencies'
-                sh 'mvn compiler:compile'
+                sh 'mvn clean package'
             }
         }
-        stage ('Exec') {
+
+        stage('Run Spring Boot') {
             steps {
-                sh 'mvn exec:java'
+                sh 'mvn spring-boot:run'
             }
         }
+
     }
+
 }
