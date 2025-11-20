@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('GetProject') {
             steps {
-                git 'https://https://github.com/rolandgalway/ct5171-springweb.git'
+                git 'https://github.com/rolandgalway/ct5171-springweb.git'
             }
         }
         stage ('build') {
