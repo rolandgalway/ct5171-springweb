@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "Testing EC2 CI/CD with better EC2 instance";
+        return "Testing EC2 CI/CD with better EC2 instance again";
     }
 }
