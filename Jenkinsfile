@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+    stage('Check Javac Version') {
+        steps {
+            sh 'echo JAVAC VERSION:'
+            sh 'javac -version'
+            sh 'ls -l /usr/bin/javac'
+            sh 'readlink -f /usr/bin/javac'
+        }
+    }
         stage('Check Java Version') {
             steps {
                 sh 'echo JAVA VERSION:'
